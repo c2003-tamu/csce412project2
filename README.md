@@ -1,3 +1,3 @@
 # CSCE 412 Project 2
-hw
+supporting files for CSCE 412 Project 2
 
