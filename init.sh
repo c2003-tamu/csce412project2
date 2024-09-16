@@ -37,3 +37,12 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 
 docker-compose --version
+
+sudo docker pull nginx
+
+git clone https://github.com/c2003-tamu/csce412project2
+
+cd csce412project2
+
+sudo docker run --name mynginx -d -p 80:80 -v ~/csce412project2/nginx_html:/usr/share/nginx/html nginx
+
