@@ -1,5 +1,5 @@
 aws ec2 run-instances \
-    --image-id ami-0abcdef1234567890 \
+    --image-id ami-0e86e20dae9224db8\
     --count 1 \
     --instance-type t2.micro \
     --key-name Laptop \
