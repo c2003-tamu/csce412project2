@@ -1,0 +1,41 @@
+version: '3'
+services:
+  mynginx1:
+    build: .
+    container_name: mynginx1
+    ports:
+      - "8080:80"
+    volumes:
+      - ~/csce412project2/nginx_html/8080.html:/usr/share/nginx/html/index.html
+
+  mynginx2:
+    build: .
+    container_name: mynginx2
+    ports:
+      - "8081:80"
+    volumes:
+      - ~/csce412project2/nginx_html/8081.html:/usr/share/nginx/html/index.html
+
+  mynginx3:
+    build: .
+    container_name: mynginx3
+    ports:
+      - "8082:80"
+    volumes:
+      - ~/csce412project2/nginx_html/8082.html:/usr/share/nginx/html/index.html
+
+  mynginx4:
+    build: .
+    container_name: mynginx4
+    ports:
+      - "8083:80"
+    volumes:
+      - ~/csce412project2/nginx_html/8083.html:/usr/share/nginx/html/index.html
+
+  mynginx5:
+    build: .
+    container_name: mynginx5
+    ports:
+      - "8084:80"
+    volumes:
+      - ~/csce412project2/nginx_html/8084.html:/usr/share/nginx/html/index.html
