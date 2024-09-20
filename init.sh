@@ -1,15 +1,27 @@
-# Update and upgrade
-sudo apt update && sudo apt upgrade -y
-sudo apt install docker.io -y
+sudo apt-get update
 
-sudo docker build -t my-nginx-container .
+sudo apt-get install ca-certificates curl
 
-sudo docker run --name mynginx1 -d -p 8080:80 -v ~/csce412project2/nginx_html/8080.html:/usr/share/nginx/html/index.html my-nginx-container
+sudo install -m 0755 -d /etc/apt/keyrings
 
-sudo docker run --name mynginx2 -d -p 8081:80 -v ~/csce412project2/nginx_html/8081.html:/usr/share/nginx/html/index.html my-nginx-container
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
 
-sudo docker run --name mynginx3 -d -p 8082:80 -v ~/csce412project2/nginx_html/8082.html:/usr/share/nginx/html/index.html my-nginx-container
+sudo chmod a+r /etc/apt/keyrings/docker.asc
 
-sudo docker run --name mynginx4 -d -p 8083:80 -v ~/csce412project2/nginx_html/8083.html:/usr/share/nginx/html/index.html my-nginx-container
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
-sudo docker run --name mynginx5 -d -p 8084:80 -v ~/csce412project2/nginx_html/8084.html:/usr/share/nginx/html/index.html my-nginx-container
+sudo apt-get update
+
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+sudo chmod +x /usr/local/bin/docker-compose
+
+sudo groupadd docker
+
+sudo gpasswd -a $USER docker
+
+newgrp docker
