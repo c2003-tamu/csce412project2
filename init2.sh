@@ -20,6 +20,13 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-
 
 sudo chmod +x /usr/local/bin/docker-compose
 
+sudo groupadd docker
+
+sudo gpasswd -a $USER docker
+
+newgrp docker
+
 docker-compose --version
+
 
 docker-compose up -d
