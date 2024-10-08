@@ -19,4 +19,4 @@ Installs all dependencies on an ec2 instance to get it ready for docker-compose 
 Uses docker-compose to start 5 nginx docker containers, each of which are given a different web page to display on a different port
 
 ## dockerdown.sh
-Takes down the 5 afformentioned ngnix docker containers
+Takes down the 5 afformentioned ngnix docker containers.
